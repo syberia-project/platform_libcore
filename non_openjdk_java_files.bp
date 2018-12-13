@@ -263,8 +263,6 @@ filegroup {
         "luni/src/main/java/libcore/io/ClassPathURLStreamHandler.java",
         "luni/src/main/java/libcore/io/BlockGuardOs.java",
         "luni/src/main/java/libcore/io/BufferIterator.java",
-        "luni/src/main/java/libcore/io/DropBox.java",
-        "luni/src/main/java/libcore/io/EventLogger.java",
         "luni/src/main/java/libcore/io/ForwardingOs.java",
         "luni/src/main/java/libcore/io/IoBridge.java",
         "luni/src/main/java/libcore/io/IoTracker.java",
