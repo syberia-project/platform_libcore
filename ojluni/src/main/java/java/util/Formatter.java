@@ -2284,8 +2284,13 @@ public final class Formatter implements Closeable, Flushable {
 
     private static char getZero(Locale l) {
         if ((l != null) && !l.equals(Locale.US)) {
-            DecimalFormatSymbols dfs = DecimalFormatSymbols.getInstance(l);
-            return dfs.getZeroDigit();
+            // Android-changed: Improve the performance by 10x http://b/197788756
+            // Unclear if this mapping is needed but inherited from DecimalFormatSymbols
+            l = LocaleData.mapInvalidAndNullLocales(l);
+            LocaleData localeData = LocaleData.get(l);
+            return localeData.zeroDigit;
+            // DecimalFormatSymbols dfs = DecimalFormatSymbols.getInstance(l);
+            //  return dfs.getZeroDigit();
         } else {
             return '0';
         }
@@ -4405,8 +4410,13 @@ public final class Formatter implements Closeable, Flushable {
 
         private char getZero(Locale l) {
             if ((l != null) &&  !l.equals(locale())) {
-                DecimalFormatSymbols dfs = DecimalFormatSymbols.getInstance(l);
-                return dfs.getZeroDigit();
+                // Android-changed: Improve the performance by 10x http://b/197788756
+                // Unclear if this mapping is needed but inherited from DecimalFormatSymbols
+                l = LocaleData.mapInvalidAndNullLocales(l);
+                LocaleData localeData = LocaleData.get(l);
+                return localeData.zeroDigit;
+                //  DecimalFormatSymbols dfs = DecimalFormatSymbols.getInstance(l);
+                //  return dfs.getZeroDigit();
             }
             return zero;
         }
