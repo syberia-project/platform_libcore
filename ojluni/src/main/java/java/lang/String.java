@@ -333,7 +333,7 @@ public final class String
      * @see  #String(byte[], java.nio.charset.Charset)
      * @see  #String(byte[])
      */
-    @Deprecated
+    @Deprecated(since="1.1")
     public String(byte ascii[], int hibyte, int offset, int count) {
         // BEGIN Android-changed: Implemented as compiler and runtime intrinsics.
         /*
@@ -390,7 +390,7 @@ public final class String
      * @see  #String(byte[], java.nio.charset.Charset)
      * @see  #String(byte[])
      */
-    @Deprecated
+    @Deprecated(since="1.1")
     public String(byte ascii[], int hibyte) {
         // BEGIN Android-changed: Implemented as compiler and runtime intrinsics.
         /*
@@ -1034,7 +1034,7 @@ public final class String
      *                 dst.length}
      *          </ul>
      */
-    @Deprecated
+    @Deprecated(since="1.1")
     public void getBytes(int srcBegin, int srcEnd, byte dst[], int dstBegin) {
         if (srcBegin < 0) {
             throw new StringIndexOutOfBoundsException(this, srcBegin);
