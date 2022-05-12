@@ -332,7 +332,6 @@ public final class DexPathList {
     }
 
     // This method is not used anymore. Kept around only because there are many legacy users of it.
-    /** @hide */
     @SuppressWarnings("unused")
     @UnsupportedAppUsage
     public static Element[] makeInMemoryDexElements(ByteBuffer[] dexFiles,
